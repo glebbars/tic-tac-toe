@@ -42,18 +42,27 @@ namespace tic_tac_toe.User
       _games.Add(game);
     }
 
-    public string GetStats()
+    public void GetStats()
     {
       Console.WriteLine($"Ваш рейтинг: {_rating}");
-      var history = new StringBuilder();
 
-      history.AppendLine($"Total current rating: {_rating}\n");
-      history.AppendLine("Result\tRate\tIndex");
+      var gamesCount = _games.Count;
 
-      for (var i = 0; i < _games.Count; i++)
-        history.AppendLine($"{i}\t{_games[i].Result}\t{_games[i].Rating}");
+      if (gamesCount <= 0)
+      {
+        Console.WriteLine("На цьому акануті ще нема історії ігор\n");
+      }
+      else
+      {
+        var history = new StringBuilder();
 
-      return history.ToString();
+        history.AppendLine("Результат\tРейтинг\tІндекс");
+
+        for (var i = 0; i < gamesCount; i++)
+          history.AppendLine($"{i}\t{_games[i].Result}\t{_games[i].Rating}");
+
+        Console.WriteLine(history.ToString());
+      }
     }
   }
 }

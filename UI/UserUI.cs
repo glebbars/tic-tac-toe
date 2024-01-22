@@ -16,9 +16,9 @@ namespace tic_tac_toe.UI
     {
       Dictionary<int, (string commandInfo, Action command)> uiCommands = new Dictionary<int, (string, Action)>
       {
-        { 1, ("Play a game", PlayGame) },
-        { 2, ("Show stats", GetStats) },
-        { 3, ("Logout", Logout) }
+        { 1, ("Зіграти в гру", PlayGame) },
+        { 2, ("Показати статистику", GetStats) },
+        { 3, ("Вийти з акаунту", Logout) }
       };
 
       ConsoleHelper.ShowMenu(() => _keepRunning, uiCommands);

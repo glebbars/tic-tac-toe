@@ -16,7 +16,7 @@ namespace tic_tac_toe.Utils
         }
         else
         {
-          Console.WriteLine("\nInvalid option. Please choose a valid option.");
+          Console.WriteLine("\nНевірний вибір. Будь ласка оберіть іншу опцію");
         }
       }
     }
@@ -26,7 +26,7 @@ namespace tic_tac_toe.Utils
       foreach (var (optionToPrint, (commandInfo, _)) in uiCommands)
         Console.WriteLine($"{optionToPrint}. {commandInfo}");
 
-      Console.Write("\nChoose an option: ");
+      Console.Write("\nОберіть опцію: ");
     }
   }
 

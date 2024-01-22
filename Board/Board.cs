@@ -42,7 +42,7 @@ namespace tic_tac_toe.Board
 
     private bool IsChoiceAlreadyTaken(int choice)
     {
-      return _gameBoard[choice - 1] == 'X' || _gameBoard[choice - 1] == 'O';
+      return _gameBoard[choice - 1] == '\u2705' || _gameBoard[choice - 1] == '\u274c';
     }
 
     public void PlayGame()
@@ -80,7 +80,7 @@ namespace tic_tac_toe.Board
           }
         } while (!validInput || IsChoiceOutOfRange(markNumber) || IsChoiceAlreadyTaken(markNumber));
 
-        _gameBoard[markNumber - 1] = isUsersMove ? 'X' : '0'; // todo symbols contsts
+        _gameBoard[markNumber - 1] = isUsersMove ? '\u2705' : '\u274c';
 
         gameStatus = CheckGameStatus();
 
@@ -102,13 +102,13 @@ namespace tic_tac_toe.Board
     private void DrawBoard()
     {
       Console.WriteLine("     |     |      ");
-      Console.WriteLine($"  {_gameBoard[0]}  |  {_gameBoard[1]}  |  {_gameBoard[2]}");
+      Console.WriteLine($"  {_gameBoard[0]}  |  {_gameBoard[1]}  |  {_gameBoard[2]}  ");
       Console.WriteLine("_____|_____|_____ ");
       Console.WriteLine("     |     |      ");
-      Console.WriteLine($"  {_gameBoard[3]}  |  {_gameBoard[4]}  |  {_gameBoard[5]}");
+      Console.WriteLine($"  {_gameBoard[3]}  |  {_gameBoard[4]}  |  {_gameBoard[5]}  ");
       Console.WriteLine("_____|_____|_____ ");
       Console.WriteLine("     |     |      ");
-      Console.WriteLine($"  {_gameBoard[6]}  |  {_gameBoard[7]}  |  {_gameBoard[8]}");
+      Console.WriteLine($"  {_gameBoard[6]}  |  {_gameBoard[7]}  |  {_gameBoard[8]}  ");
       Console.WriteLine("     |     |      ");
     }
 
